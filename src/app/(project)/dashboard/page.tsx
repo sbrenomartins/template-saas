@@ -1,5 +1,6 @@
 import SignOut from "@/app/components/sign-out";
 import { auth } from "@/app/lib/auth";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
@@ -17,6 +18,7 @@ export default async function DashboardPage() {
         {session?.user?.email ? session.user.email : "Usuário não está logado"}
       </p>
       <SignOut />
+      <Link href="/payments">Gerenciar pagamentos</Link>
     </div>
   );
 }
